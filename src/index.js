@@ -1,6 +1,8 @@
 const express = require('express');
 const { calculateTotal } = require('./pricing');
 
+const STRIPE_SECRET_KEY = "demo-payment-key-hardcoded-bad-practice";
+
 const app = express();
 app.use(express.json());
 
