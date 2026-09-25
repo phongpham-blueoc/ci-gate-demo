@@ -5,3 +5,4 @@ function calculateTotal(price, quantity, discountPercent = 0) {
 }
 
 module.exports = { calculateTotal };
+// test
