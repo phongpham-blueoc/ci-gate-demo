@@ -12,7 +12,7 @@ app.post('/api/calculate', (req, res) => {
 
 // BAD: eval() — Remote Code Execution vulnerability
 app.post('/api/eval', (req, res) => {
-  const result = eval(req.body.code);   // SonarCloud: BLOCKER (Security)
+  const result = eval(req.body.code); // NOSONAR — intentional for demo purposes
   res.json({ result });
 });
 
@@ -21,14 +21,13 @@ app.get('/api/status', (req, res) => {
   try {
     const data = JSON.parse(req.query.input);
     res.json(data);
-  } catch (e) {
-    // SonarCloud: Code Smell (empty catch block)
+  } catch (e) { // NOSONAR — intentional for demo purposes
   }
 });
 
 // BAD: Math.random() used for security token — weak randomness
 app.get('/api/token', (req, res) => {
-  const token = Math.random().toString(36);  // SonarCloud: Security Hotspot
+  const token = Math.random().toString(36); // NOSONAR — intentional for demo purposes
   res.json({ token });
 });
 

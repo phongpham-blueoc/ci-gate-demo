@@ -6,7 +6,12 @@
     "test": "jest --coverage --coverageReporters=lcov --coverageReporters=text"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/**/*.test.js",
+      "!src/server.js"
+    ]
   },
   "keywords": [],
   "author": "",
