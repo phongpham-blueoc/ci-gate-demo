@@ -21,4 +21,3 @@ describe('applyLoyaltyDiscount', () => {
     expect(applyLoyaltyDiscount(100, 'regular')).toBe(100);
   });
 });
-
